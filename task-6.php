@@ -44,4 +44,8 @@ foreach ($fauna_filters as $birds => $beaks)
     echo '</div>';
 }
 
+array_unshift($fauna, null);
+$fauna = call_user_func_array("array_map", $fauna);
+print_r($fauna);
+
 
