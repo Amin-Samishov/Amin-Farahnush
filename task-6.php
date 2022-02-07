@@ -27,9 +27,21 @@ foreach ($fauna_filters as $birds => $colours)
         echo $colour.' - '.$birds.'<br>';
     }
     echo '</div>';
-
-
+}
+$fauna_filters = [];
+foreach ($fauna as $row)
+{
+    $fauna_filters[$row['birds']][] = $row['beak'];
 }
 
+foreach ($fauna_filters as $birds => $beaks)
+{
+    echo '<div>';
+    foreach ($beaks as $beak)
+    {
+        echo $beak.' - '.$birds.'<br>';
+    }
+    echo '</div>';
+}
 
 
